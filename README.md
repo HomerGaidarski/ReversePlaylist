@@ -17,7 +17,7 @@ I realized that you can actually export iTunes playlists as text files that stor
 
 IMPORTANT: All of this must be done on the same computer, if you export an iTunes playlist, reverse it (or don’t reverse it), and then import the playlist into an iTunes library on a different computer, it won’t import properly. This is because in the text file, there is a file path for each song, when it can’t find the song there, it searches your entire computer for the file, but only searches for certain file types (ex: .m4a).
 
-1. Before you even start the program, you should go into your iTunes and export your playlist(s) as PLAIN TEXT files (it will not work if you don’t export as plain text).
+1. Before you even start the program, you should go into your iTunes and export your playlist(s) as PLAIN TEXT files (it will not work if you don’t export as plain text). On mac you actually have to specify it as plain text, but on windows just select .txt.
 
 2. Start the program. A window should pop up with a single “browse” button. If you can’t see the browse button, try resizing the window.
 
@@ -25,7 +25,7 @@ IMPORTANT: All of this must be done on the same computer, if you export an iTune
 
 4. If the reverse process worked, another window should pop up that says, “Success!” If the window didn’t pop up or the program crashed, go back to step 1 and retry. 
 
-NOTE: If you are running the program in an IDE (probably the case since I haven’t uploaded an executable jar file yet), then two identical numbers should print out in the console. The first number represents the number of songs before the reversal process, and the second number represents the number of songs after the reversal process. So, if those numbers are not the same, then it means song(s) were lost or the file was corrupted.
+NOTE: If you are running the program from a source build (not from the executable jar file), then two identical numbers should print out in the console. The first number represents the number of songs before the reversal process, and the second number represents the number of songs after the reversal process. So, if those numbers are not the same, then it means song(s) were lost or the file was corrupted.
 
 **Future Updates**
 
