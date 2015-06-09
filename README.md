@@ -17,13 +17,17 @@ I realized that you can actually export iTunes playlists as text files that stor
 
 IMPORTANT: All of this must be done on the same computer, if you export an iTunes playlist, reverse it (or don’t reverse it), and then import the playlist into an iTunes library on a different computer, it won’t import properly. This is because in the text file, there is a file path for each song, when it can’t find the song there, it searches your entire computer for the file, but only searches for certain file types (ex: .m4a).
 
-1. Before you even start the program, you should go into your iTunes and export your playlist(s) as PLAIN TEXT files (it will not work if you don’t export as plain text). On mac you actually have to specify it as plain text, but on windows just select .txt.
+1. Dowload the executable jar file "ReversePlaylist.jar" OR download the source code and import it into your favorite IDE and build.
 
-2. Start the program. A window should pop up with a single “browse” button. If you can’t see the browse button, try resizing the window.
+2. Before you even start the program, you should go into your iTunes and export your playlist(s) as PLAIN TEXT file(s) (it will not work if you don’t export as plain text). On mac you actually have to specify it as plain text, but on windows just select .txt.
 
-3. Click “browse” and search for the plain text file you exported. Select the file and click “open”.
+3. Start the program. A window should pop up with a single “browse” button. If you can’t see the browse button, try resizing the window.
 
-4. If the reverse process worked, another window should pop up that says, “Success!” If the window didn’t pop up or the program crashed, go back to step 1 and retry. 
+4. Click “browse” and search for the plain text file you exported. Select the file and click “open”.
+
+5. If the reverse process worked, another window should pop up that says, “Success!” If the window didn’t pop up or the program crashed, go back to step 1 and retry. 
+
+6. You can repeat the reverse process multiple times (doesn't have to be the same file), just repeat from step 4 and when you are done, close all java windows to quit the program.
 
 NOTE: If you are running the program from a source build (not from the executable jar file), then two identical numbers should print out in the console. The first number represents the number of songs before the reversal process, and the second number represents the number of songs after the reversal process. So, if those numbers are not the same, then it means song(s) were lost or the file was corrupted.
 
