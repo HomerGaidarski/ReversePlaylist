@@ -1,12 +1,10 @@
 package com.company;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args)
     {
-        new Swing(); // does reverse and GUI stuff
+        new ReverserWindow(); // does reverse and GUI stuff
 
         // below code is for new comparison of playlists that are similar to find the unique songs
         /*

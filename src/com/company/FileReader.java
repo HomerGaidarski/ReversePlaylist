@@ -3,6 +3,7 @@ package com.company;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -10,24 +11,21 @@ import java.util.Scanner;
  */
 public class FileReader
 {
-    private String fileName;
-    private int numOfSongs;
 
-    public FileReader(String fileName)
+    public List<String> read(String fileName)
     {
-        this.fileName = fileName;
+        return read(new File(fileName));
     }
 
-    public ArrayList<String> read()
+    public List<String> read(File file)
     {
 
-        ArrayList<String> songStrings = new ArrayList<String>(1000);
+        List<String> songStrings = new ArrayList<>(1000);
 
-        File textFile = new File(this.fileName);
         try
         {
             System.out.println("*******");
-            Scanner input = new Scanner(textFile);
+            Scanner input = new Scanner(file);
             while (input.hasNext())
             {
                 String line = input.nextLine();
@@ -36,8 +34,6 @@ public class FileReader
             }
             input.close();
 
-            this.numOfSongs = songStrings.size() - 1;
-            System.out.println(this.numOfSongs);
         }
         catch (FileNotFoundException e)
         {
@@ -47,8 +43,4 @@ public class FileReader
         return songStrings;
     }
 
-    public int getNumOfSongs()
-    {
-        return this.numOfSongs;
-    }
 }

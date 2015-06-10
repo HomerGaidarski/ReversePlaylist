@@ -3,30 +3,34 @@ package com.company;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by Homer on 11/27/14.
  */
 public class Reverse
 {
-    private boolean wasSuccessful;
 
-    public Reverse(String textFile)
-    {
-        FileReader reader = new FileReader(textFile);
-        ArrayList<String> songStrings = reader.read();
+    /**
+     * Returns true if the reverse was successful.
+     * @param file The File to reverse
+     * @return True if the file was reversed.
+     */
+    public boolean reverseFile(File file) {
+        FileReader reader = new FileReader();
+        List<String> songStrings = reader.read(file);
 
         String columnNames = songStrings.remove(0);
 
         Collections.reverse(songStrings);
 
+        int numberOfSongs = songStrings.size();
+
         try
         {
-            File inputFile = new File(textFile);
-            System.out.println("directory: " + inputFile.getParent());
+            System.out.println("directory: " + file.getParent());
 
-            FileWriter writer = new FileWriter(textFile);
-            BufferedWriter bf = new BufferedWriter(writer);
+            BufferedWriter bf = new BufferedWriter(new FileWriter(file));
 
             bf.write(columnNames + "\n");
             int i = 0;
@@ -37,24 +41,18 @@ public class Reverse
                 i++;
             }
             bf.close();
-            this.isSuccessful(i, reader.getNumOfSongs());
+
+            return i == numberOfSongs;
         }
         catch (IOException e)
         {
             e.printStackTrace();
         }
+
+        return false;
     }
 
-    public void isSuccessful(int reversedSongs, int numOfSongs)
-    {
-        if (reversedSongs == numOfSongs)
-            this.wasSuccessful = true;
-        else
-            this.wasSuccessful = false;
-    }
-
-    public boolean wasSuccessful()
-    {
-        return this.wasSuccessful;
+    public boolean reverseFile(String filePath) {
+        return reverseFile(new File(filePath));
     }
 }
