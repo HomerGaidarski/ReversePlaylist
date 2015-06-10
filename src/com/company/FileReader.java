@@ -11,7 +11,6 @@ import java.util.Scanner;
  */
 public class FileReader
 {
-
     public List<String> read(String fileName)
     {
         return read(new File(fileName));

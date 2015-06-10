@@ -11,12 +11,13 @@ import java.util.List;
 public class Reverse
 {
 
-    /**
-     * Returns true if the reverse was successful.
-     * @param file The File to reverse
-     * @return True if the file was reversed.
+    /** This takes in a text file and attempts to reverse it by line.
+     *
+     * @param file - The playlist text file of iTunes songs.
+     * @return - True if the text file was reversed.
      */
-    public boolean reverseFile(File file) {
+    public boolean reverseFile(File file)
+    {
         FileReader reader = new FileReader();
         List<String> songStrings = reader.read(file);
 
@@ -52,7 +53,13 @@ public class Reverse
         return false;
     }
 
-    public boolean reverseFile(String filePath) {
+    /** Uses the passed parameter as a filepath string to create a new file and pass it to the other reverseFile method.
+     *
+     * @param filePath - the filepath as a string
+     * @return - whether or not the reversal process was successful
+     */
+    public boolean reverseFile(String filePath)
+    {
         return reverseFile(new File(filePath));
     }
 }

@@ -37,9 +37,11 @@ public class ReverserWindow
         JButton browseButton = new JButton("browse");
         panel.add(browseButton);
 
-        browseButton.addActionListener(new ActionListener() {
+        browseButton.addActionListener(new ActionListener()
+        {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 String path = getFilePath();
                 System.out.println("Filepath: " + path);
                 Reverse reverser = new Reverse();
@@ -52,13 +54,15 @@ public class ReverserWindow
         window.setVisible(true);
     }
 
-    private String getFilePath() {
+    private String getFilePath()
+    {
         String filePath;
         JFileChooser jc = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
         jc.setFileFilter(filter);
         int response = jc.showOpenDialog(window);
-        if (response == JFileChooser.APPROVE_OPTION) {
+        if (response == JFileChooser.APPROVE_OPTION)
+        {
             filePath = jc.getSelectedFile().toString();
             return filePath;
         }

@@ -41,10 +41,12 @@ public class ComparePlaylists
             String newSong = "";
             for (int i = 0; i < strArray.length; i++)
             {
-                try {
+                try
+                {
                     Integer.parseInt(strArray[i]);
                     break;
-                }catch(NumberFormatException nfe)
+                }
+                catch(NumberFormatException nfe)
                 {
                     newSong += strArray[i];
                 }
@@ -70,11 +72,6 @@ public class ComparePlaylists
         System.out.println("****Unique Songs****");
         for (String song : biggerList)
             System.out.println(song);
-
-    }
-
-
-    public void doSomething(List<String> blahMyList) {
 
     }
 }
